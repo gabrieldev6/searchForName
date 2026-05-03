@@ -81,22 +81,22 @@ const markAsReceived = (index: number) => {
 </script>
 
 <template>
-  <div class="flex content-between">
+  <div class="flex content-between ">
 
     <ul class="mx-10 pt-15">
       <li class="pb-5">
         <h2>Sistema de entrega de kits</h2>
       </li>
       <li class="flex justify-center">
-        <input v-model="inputName" class="w-90 p-3 border border-gray-700 rounded-l-md"
+        <input v-model="inputName" class="w-90 p-3 border text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 rounded-l-md"
           placeholder="Digite o nome do colaborador" />
-          <button class="bg-gray-950 p-3 border border-gray-700 rounded-r-md"
+          <button class="dark:bg-gray-950 bg-gray-400 text-white p-3 border border-gray-400 dark:border-gray-700 rounded-r-md"
           ><Search/>
         </button>
       </li>
 
       <li class="mx-13 mt-5 h-60 w-110 overflow-y-auto">
-        <div v-if="inputName" v-for="value in filteredUsers" class="w-full flex hover:bg-gray-800 p-1.5">
+        <div v-if="inputName" v-for="value in filteredUsers" class="w-full flex hover:bg-gray-300 dark:hover:bg-gray-800 p-1.5">
           
           <p class="w-100 flex text-left">{{ value.user }}</p>
           <p><input class="w-4 h-4" type="checkbox" v-model="parseList[value.index].receive" @change="markAsReceived(value.index)" name=""></p>
@@ -107,21 +107,21 @@ const markAsReceived = (index: number) => {
       <li class="mt-15">
         <div v-if="parseList.length != 0">
           <h2>Lista completa de Colaboradores</h2>
-          <ul class="flex border pt-2 border-gray-700 rounded-t-md">
+          <ul class="flex border pt-2 border-gray-300 dark:border-gray-700 rounded-t-md">
             <li class="w-80 pl-3 py-2 text-xs text-left">
-              <p class="font-bold text-white">Nome</p>
+              <p class="font-bold text-gray-400 dark:text-white">Nome</p>
             </li>
             <li class="w-40 py-2 text-xs text-left">
-              <p class="font-bold text-white">Setor</p>
+              <p class="font-bold text-gray-400 dark:text-white">Setor</p>
             </li>
             <li class="w-20 py-2 text-xs">
-              <p class="font-bold text-white">Recebido</p>
+              <p class="font-bold text-gray-400 dark:text-white">Recebido</p>
             </li>
           </ul>
           <div class="h-90 overflow-y-auto">
             <ul class="" v-for="value in parseList">
 
-              <li class="flex border-t border-gray-700 bg-gray-800 py-3 text-xs">
+              <li class="flex border-t text-gray-400 dark:border-gray-700 dark:bg-gray-800 py-3 text-xs">
                 <p class="w-80 pl-3 text-left">{{ value.user }}</p>
                 <p class="w-40 text-left">{{ value.sector }}</p>
                 <div class="w-20 flex justify-center">
@@ -138,7 +138,7 @@ const markAsReceived = (index: number) => {
         </div>
         <div v-else class="flex justify-center text-center">
           <ul class="">
-            <li class="hover:bg-gray-800 px-5 py-15  rounded-md border border-gray-700">
+            <li class="hover:bg-gray-200 hover:text-gray-800 text-gray-600 dark:hover:text-gray-500 dark:hover:bg-gray-800  px-5 py-15  rounded-md border border-gray-300 dark:border-gray-700">
               <label for="file-upload">
                 <div class="flex justify-center">
                   <FileClock class="w-30 h-30" />
@@ -147,7 +147,7 @@ const markAsReceived = (index: number) => {
               </label>
 
               <input id="file-upload"
-                class="mt-15 hidden p-2 border border-gray-700 rounded-md bg-gray-950 hover:bg-gray-800" type="file"
+                class="hidden" type="file"
                 accept=".csv" @change="handleFileUpload">
               </input>
 

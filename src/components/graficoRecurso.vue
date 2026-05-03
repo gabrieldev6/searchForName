@@ -85,12 +85,12 @@ const chartOptions = {
 
     <!-- <p>Adicione partes do kit para analisar quando estiver perto de acabar</p> -->
     <ul class="flex">
-      <li><input v-model="rec" class="w-50 p-1 mr-0.5 border border-gray-700 rounded-md"
+      <li><input v-model="rec" class="w-50 p-1 mr-0.5 border border-gray-300 dark:border-gray-700 rounded-md"
           placeholder="Ex.: ovo, pão, peixe... " /></li>
-      <li><input v-model.number="qtd" class="w-15 p-1 mr-0.5 border border-gray-700 rounded-md" type="number" min="1"
+      <li><input v-model.number="qtd" class="w-15 p-1 mr-0.5 border border-gray-300 dark:border-gray-700 rounded-md" type="number" min="1"
           placeholder="Qtd." /></li>
       <li><button @click="event"
-          class="bg-gray-950 hover:bg-gray-800 hover:cursor-pointer p-1 px-2 border border-gray-700 rounded-md">Adicionar</button>
+          class="bg-gray-400 dark:bg-gray-950 text-white hover:bg-gray-500 dark:hover:bg-gray-800 hover:cursor-pointer p-1 px-2 border border-gray-300 dark:border-gray-700 rounded-md">Adicionar</button>
       </li>
     </ul>
     <Bar :key="chartKey" :data="chartData" :options="chartOptions" />
