@@ -4,8 +4,8 @@ import Papa from 'papaparse'
 
 import Grafico from './grafico.vue';
 import graficoRecurso from './graficoRecurso.vue';
-
 import { Check, User, X, FileClock, Search } from '@lucide/vue';
+import Modal from './modal.vue';
 
 type User = {
   index: number
@@ -18,7 +18,7 @@ let inputName = ref<string>('')
 let fileContent = ref([]);
 let parseList = ref<Array<User>>([]);
 let auxNegative = ref(1)
-
+const showOverlay = ref(false)
 
 const filteredUsers = computed(() => {
   const query = inputName.value.toUpperCase()
@@ -178,8 +178,15 @@ const markAsReceived = (index: number) => {
       <li>
         <graficoRecurso :decrease-trigger="auxNegative"/>
       </li>
-    </ul>
 
+      <li>
+        <button @click="showOverlay = true" class="w-full bg-gray-400 dark:bg-gray-950 text-white hover:bg-gray-500 dark:hover:bg-gray-800 hover:cursor-pointer mt-5 p-1 px-2 border border-gray-300 dark:border-gray-700 rounded-md">Instruções de uso</button>
+      </li>
+      
+    </ul>
+    <div v-if="showOverlay" class="w-full h-full">
+     <Modal/> 
+    </div>
 
   </div>
 </template>
