@@ -51,7 +51,7 @@ const handleFileUpload = (event: any) => {
 
   // Define o que acontece quando o arquivo é lido
   Papa.parse(file, {
-    delimiter: ";", // IMPORTANTE
+    delimiter: "", // IMPORTANTE
     header: true,   // usa a primeira linha como chave
     skipEmptyLines: true,
     complete: (results: any) => {

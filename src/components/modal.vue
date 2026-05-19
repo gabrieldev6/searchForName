@@ -13,7 +13,10 @@ import img5 from '../assets/image5.png'
 
             <div class="w-full justify-between flex pb-5">
                 <h2 class="text-black">Modo de usar</h2>
-                <X class="w-7 h-7"/>
+                <div class="w-7 h-7 rounded-md hover:bg-gray-200 flex text-center justify-center">
+                    <X class="w-7 h-7"/>
+                </div>
+                
             </div>
             <hr class="text-gray-500 h-2">
             <div class="">
@@ -23,9 +26,9 @@ import img5 from '../assets/image5.png'
                     Pascoa e São João... entre outras datas.</p>
 
                 <p>Para que possamos iniciar o guia, baixe o arquivo .csv de exemplo neste
-                    <a href="">link</a>, nele contém uma lista de Colaboradores para que o sistema
+                    <a href="https://drive.google.com/file/d/1UAizryCE7FSYbKuwK3iAm7oGxIvQhhEq/view?usp=sharing">link</a>, nele contém uma lista de Colaboradores para que o sistema
                     armazene em cache os dados da lista. Quer detalhes de como criar sua propria lista?
-                    acesse este <a href="">link</a> para ler o PDF explicando melhor como você pode está
+                    acesse este <a href="https://drive.google.com/file/d/1kS9tjvSxlOmq1TNDwkYoVozyITjtE4Ye/view?usp=sharing">link</a> para ler o PDF explicando melhor como você pode está
                     fazendo sua propria lista.
                 </p>
 
@@ -56,6 +59,10 @@ import img5 from '../assets/image5.png'
                 <div class="w-full p-3 flex justify-center">
                     <img class="rounded w-70" :src="img5" alt="">
                 </div>
+
+                <p>
+                    Outro recurso importante é a gestão de kit, nele você pode adicionar o 
+                </p>
             </div>
 
         </div>
